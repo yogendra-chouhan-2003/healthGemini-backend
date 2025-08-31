@@ -50,7 +50,7 @@ export const getUserProfile = async (req, res) => {
         if (!user) {
             return res.status(400).json({ error: "User not found!" });
         }
-        user.profile.imageName = "http://localhost:3000/user/profile/" + user.profile.imageName;
+        user.profile.imageName = "https://healthgemini-backend.onrender.com/user/profile/" + user.profile.imageName;
         return res.status(201).json({ message: user });
 
     } catch (err) {
@@ -193,7 +193,7 @@ const sendEmail = (email, name) => {
             subject: 'Account Verification',
             html: `<h4>Dear ${name}</h4>
             <p>Thank you for registration. To verify account please click on below button</p>
-            <form method="post" action="https://healthgemini-frontend.onrender.com/user/verification">
+            <form method="post" action="https://healthgemini-backend.onrender.com/user/verification">
               <input type="hidden" name="email" value="${email}"/>
               <button type="submit" style="background-color: blue; color:white; width:200px; border: none; border: 1px solid grey; border-radius:10px;">Verify</button>
             </form>

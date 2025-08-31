@@ -29,7 +29,6 @@ export const CreateServer = async (req, res) => {
     const response = await result.response;
     const text = await response.text();
 
-    //Save to history (if needed in future)
     await User.findByIdAndUpdate(userId, {
       $push: {
         history: { prompt, response: text }
