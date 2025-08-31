@@ -13,8 +13,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://health-suggestion-app-frontend.onrender.com'], // frontend
-    credentials: true
+    origin: ['http://localhost:5173', 'https://healthgemini-frontend.onrender.com'],
 }));
 
 app.use(express.static("public"));
